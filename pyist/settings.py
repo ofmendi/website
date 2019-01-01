@@ -91,6 +91,7 @@ INSTALLED_APPS = (
     'people',
     'presentations',
     'blog',
+    'activities',
 )
 
 LOGGING = {

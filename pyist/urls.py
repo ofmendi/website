@@ -20,6 +20,7 @@ urlpatterns = [
     path('', include('blog.urls', namespace="blog")),
     path('people/', include('people.urls')),
     path('presentations/', include('presentations.urls')),
+    path('activities/', include('activities.urls')),
     path('sitemap.xml', index, {'sitemaps': sitemaps}),
     # path('sitemap-(?P<section>.+)\.xml$', sitemap, {'sitemaps': sitemaps}),
     path('sitemap-<section>.xml', sitemap, {'sitemaps': sitemaps}),
