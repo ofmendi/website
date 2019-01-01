@@ -8,10 +8,11 @@ class ActivitiesView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['msg'] = self.get_all_activities()
+        context['all_events'] = self.get_all_activities()
         return context
 
-    def get_past_activities(self):
+    def get_all_activities(self):
         client = meetup.api.Client(os.environ.get('MEETUP_API_KEY'))
-        past_events = client.GetEvents({'group_urlname': 'python-istanbul', 'status': 'past'})
-        return past_events.__dict__
+        all_events = client.GetEvents(
+            {'group_urlname': 'python-istanbul', 'status': ['upcoming', 'past']})
+        return all_events.__dict__
