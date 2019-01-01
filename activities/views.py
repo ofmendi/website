@@ -1,6 +1,4 @@
 import os
-import json
-import pprint
 import meetup.api
 from django.views.generic.base import TemplateView
 class ActivitiesView(TemplateView):
